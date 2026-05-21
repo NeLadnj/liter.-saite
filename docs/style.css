@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
+        url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+/* атмосферное затемнение */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top left, rgba(214,40,57,0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 30%);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* верхнее меню */
+header {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 60px;
+
+    background: rgba(8,8,8,0.72);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+
+    z-index: 1000;
+}
+
+/* логотип */
+.logo {
+    font-size: 34px;
+    font-family: 'Oswald', sans-serif;
+
+    letter-spacing: 4px;
+
+    color: #d62839;
+
+    text-shadow:
+        0 0 20px rgba(214,40,57,0.45);
+}
+
+/* ссылки меню */
+nav a {
+    color: #ededed;
+    text-decoration: none;
+
+    margin-left: 28px;
+
+    position: relative;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* линия под ссылкой */
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background: #d62839;
+
+    transition: 0.35s;
+}
+
+/* hover ссылок */
+nav a:hover {
+    color: #d62839;
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* главный экран */
+.hero {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+/* центральный блок */
+.hero-content {
+    max-width: 900px;
+
+    padding: 55px;
+
+    background: rgba(20,20,20,0.48);
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.65),
+        0 0 40px rgba(214,40,57,0.12);
+}
+
+/* заголовок */
+.hero-content h1 {
+    font-size: 110px;
+
+    font-family: 'Oswald', sans-serif;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.08),
+        0 0 45px rgba(214,40,57,0.22);
+}
+
+/* текст */
+.hero-content p {
+    font-size: 20px;
+
+    color: #d5d5d5;
+
+    line-height: 1.8;
+}
+
+/* секции */
+section {
+    padding: 120px 10%;
+}
+
+/* заголовки */
+.section-title {
+    font-size: 52px;
+
+    font-family: 'Oswald', sans-serif;
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+    color: #d62839;
+
+    text-shadow:
+        0 0 20px rgba(214,40,57,0.25);
+}
+
+/* сетка карточек */
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 35px;
+}
+
+/* карточка */
+.card {
+    background: rgba(24,24,24,0.78);
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* hover карточек */
+.card:hover {
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    border-color: rgba(214,40,57,0.35);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.65),
+        0 0 35px rgba(214,40,57,0.14);
+}
+
+/* заголовки карточек */
+.card h3 {
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+/* текст карточек */
+.card p {
+    color: #cfcfcf;
+
+    line-height: 1.7;
+}
+
+/* живая кнопка */
+.btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 16px 36px;
+
+    background: linear-gradient(135deg, #d62839, #7f0000);
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 16px;
+
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 10px 25px rgba(214,40,57,0.35),
+        inset 0 0 12px rgba(255,255,255,0.05);
+}
+
+/* свет на кнопке */
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transition: 0.65s;
+}
+
+/* hover кнопки */
+.btn:hover {
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    box-shadow:
+        0 20px 40px rgba(214,40,57,0.45),
+        0 0 35px rgba(214,40,57,0.22);
+}
+
+/* движение света */
+.btn:hover::before {
+    left: 120%;
+}
+
+/* нажатие */
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* футер */
+footer {
+    text-align: center;
+
+    padding: 45px;
+
+    background: rgba(5,5,5,0.9);
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    color: #777;
+}
+
+/* скролл */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d62839;
+    border-radius: 30px;
+}
+
+/* телефон */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hero-content {
+        padding: 35px;
+    }
+
+    .hero-content h1 {
+        font-size: 60px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+}
