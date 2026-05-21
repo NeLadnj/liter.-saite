@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+  color: white;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(90deg, #1f1f1f, #2a2a2a);
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 52px;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #222;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00bfff;
+  transform: scale(1.1);
+}
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* CARDS */
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #2b2b2b;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00bfff;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #00bfff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #777;
+  border-top: 1px solid #222;
+}
